@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4xd0ti6at0g5"]
+[gd_scene load_steps=17 format=3 uid="uid://b4xd0ti6at0g5"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_rya6k"]
 [ext_resource type="Environment" uid="uid://byflfe4vbcnpy" path="res://indoor_env.tres" id="2_emu3q"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bybaphd15yied" path="res://components/scenery/court.tscn" id="9_ou4f2"]
 [ext_resource type="PackedScene" uid="uid://bu7wa38qb2mw4" path="res://components/objects/grab_basketball_classic.tscn" id="10_tsdkl"]
 [ext_resource type="PackedScene" uid="uid://bmfbf20okgcpy" path="res://components/objects/grab_basketball_godot.tscn" id="11_6egi4"]
+[ext_resource type="PackedScene" uid="uid://1ce73xaf6hcm" path="res://components/objects/grab_basketball_retro.tscn" id="14_7p6j0"]
+[ext_resource type="PackedScene" uid="uid://dog5f5x6sy7j1" path="res://components/objects/grab_basketball_allstar.tscn" id="15_f61w1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cfg26"]
 radius = 0.2
@@ -51,11 +53,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211634, 0)
 [node name="Basketball" parent="." index="2" instance=ExtResource("10_tsdkl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36756, 0.571885, -2.43063)
 
-[node name="Basketball2" parent="." index="3" instance=ExtResource("11_6egi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112836, 0.739738, -2.68938)
-
-[node name="Basketball3" parent="." index="4" instance=ExtResource("11_6egi4")]
+[node name="Basketball3" parent="." index="3" instance=ExtResource("11_6egi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25328, 0.938983, -4.27065)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="5"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="4"]
 transform = Transform3D(-0.5, 0.866025, -9.44696e-09, -4.47035e-08, -1.49012e-08, 1, 0.866025, 0.5, 4.61649e-08, 0, 10, 0)
+
+[node name="Basketball4" parent="." index="5" instance=ExtResource("14_7p6j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.490079, 0.637341, -3.71678)
+
+[node name="Basketball2" parent="." index="6" instance=ExtResource("15_f61w1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69732, 0.788366, -3.86737)

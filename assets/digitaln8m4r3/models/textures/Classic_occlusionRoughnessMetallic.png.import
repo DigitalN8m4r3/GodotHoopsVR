@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr5cfjnlmufgk"
-path.s3tc="res://.godot/imported/Court_occlusionRoughnessMetallic.png-886be8f2d19a7b2f67cd6e4d44c5b11a.s3tc.ctex"
+uid="uid://bvdmju0b3u8ko"
+path.s3tc="res://.godot/imported/Classic_occlusionRoughnessMetallic.png-d7ece9510d88e40e5239ddf0015d7417.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/digitaln8m4r3/models/textures/Court_occlusionRoughnessMetallic.png"
-dest_files=["res://.godot/imported/Court_occlusionRoughnessMetallic.png-886be8f2d19a7b2f67cd6e4d44c5b11a.s3tc.ctex"]
+source_file="res://assets/digitaln8m4r3/models/textures/Classic_occlusionRoughnessMetallic.png"
+dest_files=["res://.godot/imported/Classic_occlusionRoughnessMetallic.png-d7ece9510d88e40e5239ddf0015d7417.s3tc.ctex"]
 
 [params]
 

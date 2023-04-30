@@ -1,17 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu7wa38qb2mw4"]
+[gd_scene load_steps=13 format=3 uid="uid://bu7wa38qb2mw4"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_e1kbd"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_h6qa7"]
 [ext_resource type="PackedScene" uid="uid://ctnda3j1josyf" path="res://assets/digitaln8m4r3/models/basketball/basketball.glb" id="2_xpw3i"]
-[ext_resource type="Material" uid="uid://b1c46rsfi6uev" path="res://assets/digitaln8m4r3/models/materials/basketball_lines.material" id="3_ohdu2"]
 [ext_resource type="Resource" uid="uid://epoxycj2fyxq" path="res://components/objects/poses/pose_basketball_left.tres" id="3_uepan"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_ssp0c"]
-[ext_resource type="Material" uid="uid://cpu4rspwi5kcd" path="res://assets/digitaln8m4r3/models/materials/basketball_classic.material" id="4_t84fo"]
 [ext_resource type="Resource" uid="uid://d0mybjeq0k340" path="res://components/objects/poses/pose_basketball_right.tres" id="5_wsf03"]
+[ext_resource type="Texture2D" uid="uid://cq8j1qkvkhvr5" path="res://assets/digitaln8m4r3/models/textures/Classic_baseColor.png" id="7_5crbv"]
+[ext_resource type="Texture2D" uid="uid://bf4aj2ck2pgqp" path="res://assets/digitaln8m4r3/models/textures/Classic_normal.png" id="8_b5xrx"]
+[ext_resource type="Texture2D" uid="uid://bvdmju0b3u8ko" path="res://assets/digitaln8m4r3/models/textures/Classic_occlusionRoughnessMetallic.png" id="9_iyfds"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="9_nxj4d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lavvx"]
 radius = 0.121
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ynuvn"]
+albedo_texture = ExtResource("7_5crbv")
+orm_texture = ExtResource("9_iyfds")
+normal_enabled = true
+normal_texture = ExtResource("8_b5xrx")
 
 [node name="Basketball" instance=ExtResource("1_e1kbd")]
 collision_mask = 720903
@@ -32,9 +39,7 @@ shape = SubResource("SphereShape3D_lavvx")
 [node name="basketball" parent="." index="3" instance=ExtResource("2_xpw3i")]
 
 [node name="mesh_basketball" parent="basketball" index="0"]
-surface_material_override/0 = ExtResource("3_ohdu2")
-surface_material_override/1 = ExtResource("4_t84fo")
-surface_material_override/2 = ExtResource("4_t84fo")
+surface_material_override/0 = SubResource("ORMMaterial3D_ynuvn")
 
 [node name="HighlightRing" parent="." index="4" instance=ExtResource("9_nxj4d")]
 
