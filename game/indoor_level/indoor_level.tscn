@@ -1,0 +1,61 @@
+[gd_scene load_steps=15 format=3 uid="uid://b4xd0ti6at0g5"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_rya6k"]
+[ext_resource type="Environment" uid="uid://byflfe4vbcnpy" path="res://indoor_env.tres" id="2_emu3q"]
+[ext_resource type="PackedScene" uid="uid://cy03d57iyrci" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_physics_hand.tscn" id="2_vgoqs"]
+[ext_resource type="Material" uid="uid://cfwemuqlcgoi0" path="res://addons/godot-xr-tools/hands/materials/african_hands.material" id="3_vswoo"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_yf2bu"]
+[ext_resource type="PackedScene" uid="uid://kcqomcjq52np" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_hand.tscn" id="5_uiqy4"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_jx6xb"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_xln1k"]
+[ext_resource type="PackedScene" uid="uid://clt88d5d1dje4" path="res://addons/godot-xr-tools/functions/movement_crouch.tscn" id="7_c1ata"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="8_oesh5"]
+[ext_resource type="PackedScene" uid="uid://bybaphd15yied" path="res://components/scenery/court.tscn" id="9_ou4f2"]
+[ext_resource type="PackedScene" uid="uid://bu7wa38qb2mw4" path="res://components/objects/grab_basketball_classic.tscn" id="10_tsdkl"]
+[ext_resource type="PackedScene" uid="uid://bmfbf20okgcpy" path="res://components/objects/grab_basketball_godot.tscn" id="11_6egi4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cfg26"]
+radius = 0.2
+height = 1.4
+
+[node name="SceneBase" instance=ExtResource("1_rya6k")]
+environment = ExtResource("2_emu3q")
+
+[node name="LeftPhysicsHand" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_vgoqs")]
+hand_material_override = ExtResource("3_vswoo")
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("4_yf2bu")]
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" index="2" instance=ExtResource("6_jx6xb")]
+
+[node name="MovementCrouch" parent="XROrigin3D/LeftHand" index="3" instance=ExtResource("7_c1ata")]
+
+[node name="MovementJump" parent="XROrigin3D/LeftHand" index="4" instance=ExtResource("8_oesh5")]
+
+[node name="RightPhysicsHand" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("5_uiqy4")]
+hand_material_override = ExtResource("3_vswoo")
+
+[node name="FunctionPickup" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("4_yf2bu")]
+
+[node name="MovementDirect" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("6_jx6xb")]
+
+[node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("6_xln1k")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/PlayerBody" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_cfg26")
+
+[node name="court" parent="." index="1" instance=ExtResource("9_ou4f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211634, 0)
+
+[node name="Basketball" parent="." index="2" instance=ExtResource("10_tsdkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36756, 0.571885, -2.43063)
+
+[node name="Basketball2" parent="." index="3" instance=ExtResource("11_6egi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112836, 0.739738, -2.68938)
+
+[node name="Basketball3" parent="." index="4" instance=ExtResource("11_6egi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25328, 0.938983, -4.27065)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="5"]
+transform = Transform3D(-0.5, 0.866025, -9.44696e-09, -4.47035e-08, -1.49012e-08, 1, 0.866025, 0.5, 4.61649e-08, 0, 10, 0)
