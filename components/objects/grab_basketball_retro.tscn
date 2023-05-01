@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://1ce73xaf6hcm"]
+[gd_scene load_steps=11 format=3 uid="uid://1ce73xaf6hcm"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_k1gbi"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_86onw"]
 [ext_resource type="PackedScene" uid="uid://ctnda3j1josyf" path="res://assets/digitaln8m4r3/models/basketball/basketball.glb" id="2_q1qcp"]
+[ext_resource type="PhysicsMaterial" uid="uid://cp81nam8s31si" path="res://assets/digitaln8m4r3/models/phymat/basketball.phymat" id="2_q18q1"]
 [ext_resource type="Resource" uid="uid://epoxycj2fyxq" path="res://components/objects/poses/pose_basketball_left.tres" id="3_tt1lu"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_iuwwq"]
 [ext_resource type="Resource" uid="uid://d0mybjeq0k340" path="res://components/objects/poses/pose_basketball_right.tres" id="5_muae6"]
@@ -10,19 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="10_fljpo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lavvx"]
-radius = 0.121
+radius = 0.14
 
 [node name="Basketball" instance=ExtResource("1_k1gbi")]
-collision_mask = 720903
+collision_mask = 589831
 mass = 1.3
-ranged_grab_method = 2
+physics_material_override = ExtResource("2_q18q1")
 
 [node name="GrabPointHandLeft" parent="." index="0" instance=ExtResource("2_86onw")]
-transform = Transform3D(0.993288, 0.0264839, 0.112597, -0.0407877, 0.991102, 0.126697, -0.108239, -0.130439, 0.98553, -0.0977918, 0.0614897, -0.0795642)
+transform = Transform3D(0.993288, 0.0264839, 0.112597, -0.0407877, 0.991102, 0.126697, -0.108239, -0.130439, 0.98553, -0.12, 0.061, -0.08)
 hand_pose = ExtResource("3_tt1lu")
 
 [node name="GrabPointHandRight" parent="." index="1" instance=ExtResource("4_iuwwq")]
-transform = Transform3D(0.991241, 0.0850192, 0.101064, -0.071546, 0.988906, -0.130181, -0.111011, 0.121809, 0.986326, 0.0911093, 0.061, -0.08)
+transform = Transform3D(0.991241, 0.0850192, 0.101064, -0.071546, 0.988906, -0.130181, -0.111011, 0.121809, 0.986326, 0.119, 0.061, -0.08)
 hand_pose = ExtResource("5_muae6")
 
 [node name="CollisionShape3D" parent="." index="2"]
@@ -30,7 +31,7 @@ shape = SubResource("SphereShape3D_lavvx")
 
 [node name="basketball" parent="." index="3" instance=ExtResource("2_q1qcp")]
 
-[node name="mesh_basketball" parent="basketball" index="0"]
+[node name="basketball2" parent="basketball" index="0"]
 surface_material_override/0 = ExtResource("7_qbgjv")
 
 [node name="HighlightRing" parent="." index="4" instance=ExtResource("10_fljpo")]

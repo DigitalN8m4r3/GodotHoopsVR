@@ -27,6 +27,7 @@ environment = ExtResource("2_emu3q")
 hand_material_override = ExtResource("3_vswoo")
 
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("4_yf2bu")]
+ranged_angle = 45.0
 
 [node name="MovementDirect" parent="XROrigin3D/LeftHand" index="2" instance=ExtResource("6_jx6xb")]
 
@@ -38,6 +39,7 @@ hand_material_override = ExtResource("3_vswoo")
 hand_material_override = ExtResource("3_vswoo")
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("4_yf2bu")]
+ranged_angle = 45.0
 
 [node name="MovementDirect" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("6_jx6xb")]
 
